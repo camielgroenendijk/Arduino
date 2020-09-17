@@ -20,8 +20,8 @@ void loop(void) {
   u8g2.firstPage();
   do {
     u8g2.setFont(u8g2_font_ncenB10_tr);
-    u8g2.drawStr(0,24,"Hello World!");
+    u8g2.drawStr(0,12,"Hello World!");
     u8g2.drawStr(0,24,"How You Doin?");
+    u8g2.drawStr(0,36,"'Joey Tribianni'");
   } while ( u8g2.nextPage() );
-    delay(1000);
 }
