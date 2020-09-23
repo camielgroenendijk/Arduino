@@ -43,15 +43,13 @@ void loop(void) {
   Serial.println(xDirection);
 
   Serial.print("y=as:     ");
-  Serial.println(xDirection);
+  Serial.println(yDirection);
 
   if (!switchState) {
     Serial.println("Schakelaar ingedrukt");
     do {
     u8g2.setFont(u8g2_font_ncenB10_tr);
-    u8g2.drawStr(0,12,"Hello World!");
-    u8g2.drawStr(0,24,"How You Doin?");
-    u8g2.drawStr(0,36,"'Joey Tribianni'");
+    u8g2.drawStr(0,12,"Schakelaar Ingedrukt");
   } while ( u8g2.nextPage() );
   } else if (switchState) {
       Serial.println("schakelaar niet ingedrukt");
@@ -60,17 +58,56 @@ void loop(void) {
 
   if (xDirection < 480) {
     Serial.println("Links");
+    do {
+      u8g2.setFont(u8g2_font_ncenB10_tr);
+      u8g2.drawStr(0,12,"Links");
+    } while (u8g2.nextPage() );
   } else if (xDirection > 520) {
     Serial.println("Rechts");
+    do {
+      u8g2.setFont(u8g2_font_ncenB10_tr);
+      u8g2.drawStr(0,12,"Rechts");
+    } while (u8g2.nextPage() );   
   }
 
   if (yDirection < 480) {
     Serial.println("Omlaag");
+    do {
+      u8g2.setFont(u8g2_font_ncenB10_tr);
+      u8g2.drawStr(0,24,"Omlaag");
+    } while (u8g2.nextPage() );    
   } else if (yDirection > 525) {
     Serial.println("Omhoog");
+    do {
+      u8g2.setFont(u8g2_font_ncenB10_tr);
+      u8g2.drawStr(0,24,"Omhoog");
+    } while (u8g2.nextPage() );
+    
   }
 
-  delay(2000);
+if ((xDirection < 480) && (yDirection > 540)) {
+  do {    
+    Serial.println("LinksBoven");
+    u8g2.setFont(u8g2_font_ncenB10_tr);
+    u8g2.drawStr(0,48,"Links Boven");
+  } while (u8g2.nextPage() );
+        
+    }
+if ((xDirection > 540) && (yDirection > 480)) {
+      Serial.println("RechtsBoven");
+    }        
+if ((xDirection < 480) && (yDirection < 480)) {
+      Serial.println("Links Onder");
+    }  
+if ((xDirection > 540) && (yDirection < 540)) {
+      Serial.println("Rechts Onder");
+    }  
+ 
+
+
+delay(1000);
+
 
   
+
 }
