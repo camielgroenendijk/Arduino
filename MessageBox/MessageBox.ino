@@ -56,19 +56,6 @@ void loop(void) {
       u8g2.clear();
   }    
 
-  if (xDirection < 480) {
-    Serial.println("Links");
-    do {
-      u8g2.setFont(u8g2_font_ncenB10_tr);
-      u8g2.drawStr(0,12,"Links");
-    } while (u8g2.nextPage() );
-  } else if (xDirection > 520) {
-    Serial.println("Rechts");
-    do {
-      u8g2.setFont(u8g2_font_ncenB10_tr);
-      u8g2.drawStr(0,12,"Rechts");
-    } while (u8g2.nextPage() );   
-  }
 
   if (yDirection < 480) {
     Serial.println("Omlaag");
@@ -85,25 +72,48 @@ void loop(void) {
     
   }
 
-if ((xDirection < 480) && (yDirection > 540)) {
-  do {    
-    Serial.println("LinksBoven");
-    u8g2.setFont(u8g2_font_ncenB10_tr);
-    u8g2.drawStr(0,48,"Links Boven");
-  } while (u8g2.nextPage() );
-        
-    }
-if ((xDirection > 540) && (yDirection > 480)) {
-      Serial.println("RechtsBoven");
-    }        
-if ((xDirection < 480) && (yDirection < 480)) {
-      Serial.println("Links Onder");
-    }  
-if ((xDirection > 540) && (yDirection < 540)) {
-      Serial.println("Rechts Onder");
-    }  
- 
+//
+//    } else if (yDirection > 525) {
+//    Serial.println("Omhoog");      
+//    } else if ((xDirection < 480) && (yDirection < 480)) {
+//      Serial.println("Links Onder");¨
+//    } else if (yDirection < 480) {
+//    Serial.println("Omlaag");
+//    } else if (xDirection < 480) {
+//      Serial.println("Links");
+//    }
+//  
+//if ((xDirection > 540) && (yDirection > 540)) {
+//      Serial.println("RechtsBoven");
+//    } else if ((xDirection > 540) && (yDirection < 480)) {
+//      Serial.println("Rechts Onder");
+//    } else if (xDirection > 540) {
+//      Serial.println("Rechts");
+//    }
+//         
+//if ((xDirection < 480) && (yDirection > 540)) {    
+//    Serial.println("LinksBoven");
 
+//if ((xDirection < 480) && (yDirection > 540)) {    
+//    Serial.println("LinksBoven");
+//    } else if (yDirection > 525) {
+//    Serial.println("Omhoog");      
+//    } else if ((xDirection < 480) && (yDirection < 480)) {
+//      Serial.println("Links Onder");
+//    } else if (yDirection < 480) {
+//    Serial.println("Omlaag");
+//    } else if (xDirection < 480) {
+//      Serial.println("Links");
+//    }
+//  
+//if ((xDirection > 540) && (yDirection > 540)) {
+//      Serial.println("RechtsBoven");
+//    } else if ((xDirection > 540) && (yDirection < 480)) {
+//      Serial.println("Rechts Onder");
+//    } else if (xDirection > 540) {
+//      Serial.println("Rechts");
+//    }
+           
 
 delay(1000);
 
